@@ -82,7 +82,9 @@ with code.  I've helped hundreds of students go from zero to job-ready.
           <Link to="topics" smooth offset={-80} duration={500}>
             <Button variant="primary">View My Work</Button>
           </Link>
-          <Button variant="ghost">Download CV</Button>
+          <a href="/cv.pdf" download="Balqees_AlKhateeb_CV.pdf">
+            <Button variant="ghost">Download CV</Button>
+          </a>
         </motion.div>
 
         {/* Social links */}
