@@ -13,7 +13,10 @@ interface ContactFormInputs {
   message: string
 }
 
+import { useTranslation } from 'react-i18next'
+
 export function Contact() {
+  const { t } = useTranslation()
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormInputs>()
 
@@ -22,18 +25,15 @@ export function Contact() {
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-console.log(serviceId,templateId,publicKey);
 
     if (!serviceId || !templateId || !publicKey || serviceId === 'your_service_id_here') {
       console.error('EmailJS keys are missing in .env file')
-      alert('Please configure your EmailJS keys in the .env file first!')
       return
     }
 
     setStatus('sending')
     
     try {
-
       await emailjs.send(
         serviceId,
         templateId,
@@ -71,10 +71,10 @@ console.log(serviceId,templateId,publicKey);
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="text-[var(--brand)]">Touch</span>
+            {t('contact.title')}
           </h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            Have a question or want to collaborate? I'd love to hear from you.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -86,43 +86,43 @@ console.log(serviceId,templateId,publicKey);
             variants={fadeInUp}
           >
             <GlassCard className="p-8 md:p-10">
-              <h3 className="font-display text-2xl font-bold mb-6">Send a Message</h3>
+              <h3 className="font-display text-2xl font-bold mb-6">{t('contact.form.title')}</h3>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{t('contact.form.name')}</label>
                   <input
                     id="name"
                     type="text"
-                    {...register('name', { required: 'Name is required' })}
+                    {...register('name', { required: `${t('contact.form.name')} ${t('contact.form.required')}` })}
                     className={`w-full bg-[var(--bg-primary)] border ${errors.name ? 'border-red-500' : 'border-[var(--surface-border)]'} rounded-xl px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)] transition-shadow`}
-                    placeholder="Your Name"
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{t('contact.form.email')}</label>
                   <input
                     id="email"
                     type="email"
                     {...register('email', { 
-                      required: 'Email is required',
-                      pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' }
+                      required: `${t('contact.form.email')} ${t('contact.form.required')}`,
+                      pattern: { value: /^\S+@\S+$/i, message: t('contact.form.invalidEmail') }
                     })}
                     className={`w-full bg-[var(--bg-primary)] border ${errors.email ? 'border-red-500' : 'border-[var(--surface-border)]'} rounded-xl px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)] transition-shadow`}
-                    placeholder="your.email@example.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">{t('contact.form.message')}</label>
                   <textarea
                     id="message"
                     rows={5}
-                    {...register('message', { required: 'Message is required' })}
+                    {...register('message', { required: `${t('contact.form.message')} ${t('contact.form.required')}` })}
                     className={`w-full bg-[var(--bg-primary)] border ${errors.message ? 'border-red-500' : 'border-[var(--surface-border)]'} rounded-xl px-4 py-3 text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)] transition-shadow resize-none`}
-                    placeholder="Tell me more about your inquiry..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
                 </div>
@@ -134,21 +134,21 @@ console.log(serviceId,templateId,publicKey);
                   disabled={status === 'sending'}
                 >
                   {status === 'sending' ? (
-                    'Sending...'
+                    t('contact.form.sending')
                   ) : status === 'success' ? (
-                    'Message Sent!'
+                    t('contact.form.sent')
                   ) : status === 'error' ? (
-                    'Error Sending'
+                    t('contact.form.error')
                   ) : (
-                    <>Send Message <Send size={18} /></>
+                    <>{t('contact.form.send')} <Send size={18} /></>
                   )}
                 </Button>
                 
                 {status === 'success' && (
-                  <p className="text-green-500 text-center text-sm mt-2">Thank you! Your message has been sent successfully.</p>
+                  <p className="text-green-500 text-center text-sm mt-2">{t('contact.form.successMessage')}</p>
                 )}
                 {status === 'error' && (
-                  <p className="text-red-500 text-center text-sm mt-2">Something went wrong. Please try again later.</p>
+                  <p className="text-red-500 text-center text-sm mt-2">{t('contact.form.errorMessage')}</p>
                 )}
               </form>
             </GlassCard>
@@ -163,9 +163,9 @@ console.log(serviceId,templateId,publicKey);
           >
             <div className="space-y-8">
               <div>
-                <h3 className="font-display text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="font-display text-2xl font-bold mb-6">{t('contact.info.title')}</h3>
                 <p className="text-[var(--text-secondary)] mb-8 leading-relaxed">
-                  I'm always open to discussing new projects, teaching opportunities, or just chatting about the latest in tech.
+                  {t('contact.info.description')}
                 </p>
               </div>
 
@@ -175,7 +175,7 @@ console.log(serviceId,templateId,publicKey);
                     <Mail size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-[var(--text-primary)] mb-1">Email</h4>
+                    <h4 className="font-medium text-[var(--text-primary)] mb-1">{t('contact.info.email')}</h4>
                     <a href="mailto:balqees.alkhateb@gmail.com" className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors">
                       balqees.alkhateb@gmail.com
                     </a>
@@ -187,7 +187,7 @@ console.log(serviceId,templateId,publicKey);
                     <Phone size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-[var(--text-primary)] mb-1">Phone</h4>
+                    <h4 className="font-medium text-[var(--text-primary)] mb-1">{t('contact.info.phone')}</h4>
                     <a href="tel:00962787023107" className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors">
                       +962 787 023 107
                     </a>
@@ -199,9 +199,9 @@ console.log(serviceId,templateId,publicKey);
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-[var(--text-primary)] mb-1">Location</h4>
+                    <h4 className="font-medium text-[var(--text-primary)] mb-1">{t('contact.info.location')}</h4>
                     <p className="text-[var(--text-secondary)] leading-relaxed">
-                      Amman, Jordan<br />Available for remote work worldwide
+                      {t('contact.info.locationText')}<br />{t('contact.info.remote')}
                     </p>
                   </div>
                 </div>

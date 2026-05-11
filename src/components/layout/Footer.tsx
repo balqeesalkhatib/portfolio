@@ -1,13 +1,16 @@
+import { useTranslation } from 'react-i18next'
 import { FaGithub, FaLinkedin, FaInstagram, FaPhoneAlt } from 'react-icons/fa'
 
 export function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="py-8 bg-[var(--bg-primary)] border-t border-[var(--surface-border)]">
       <div className="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between text-sm text-[var(--text-muted)]">
-        <p>&copy; {new Date().getFullYear()} Balqees Al-Khateeb. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Balqees Al-Khateeb. {t('footer.rights')}</p>
         
         {/* Social & Contact Icons */}
-        <div className="mt-6 md:mt-0 flex items-center space-x-6">
+        <div className="mt-6 md:mt-0 flex items-center space-x-6 rtl:space-x-reverse">
           <a 
             href="https://github.com/balqeesalkhatib" 
             target="_blank" 

@@ -3,28 +3,22 @@ import { fadeInUp, staggerContainer } from '../../lib/animations'
 import { GlassCard } from '../ui/GlassCard'
 import { Quote } from 'lucide-react'
 
-const testimonials = [
-  {
-    name: "Ahmed Rayan",
-    role: "Full-Stack Student",
-    content: "Balqees has a unique way of breaking down complex React concepts. Her focus on 'why' before 'how' completely changed my approach to coding.",
-    image: "https://i.pravatar.cc/150?u=ahmed"
-  },
-  {
-    name: "Sara Al-Otaibi",
-    role: "MERN Stack Bootcamp Graduate",
-    content: "The best part of learning with Balqees was the real-world projects. She doesn't just teach code; she teaches how to think like an engineer.",
-    image: "https://i.pravatar.cc/150?u=sara"
-  },
-  {
-    name: "Omar Khaled",
-    role: "Junior Web Developer",
-    content: "Her QA background is a game-changer. I learned how to debug and test my applications properly, which helped me land my first job in record time.",
-    image: "https://i.pravatar.cc/150?u=omar"
-  }
-]
+
+import { useTranslation } from 'react-i18next'
 
 export function Testimonials() {
+  const { t } = useTranslation()
+  const testimonials = t('testimonials.items', { returnObjects: true }) as { name: string, role: string, content: string, image: string }[]
+
+  // Note: images are still hardcoded in the data mapping logic if needed, 
+  // but I'll add them to the json or just keep them here if they are placeholders.
+  // Actually, I'll map them back in the component for simplicity if they aren't in JSON.
+  const testimonialImages = [
+    "https://i.pravatar.cc/150?u=ahmed",
+    "https://i.pravatar.cc/150?u=sara",
+    "https://i.pravatar.cc/150?u=omar"
+  ]
+
   return (
     <section id="testimonials" className="py-20 md:py-32 bg-[var(--bg-secondary)] relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -36,10 +30,10 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Student <span className="text-[var(--accent)]">Success Stories</span>
+            {t('testimonials.title')}
           </h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            What my students say about their learning journey and career growth.
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 
@@ -61,7 +55,7 @@ export function Testimonials() {
                 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[var(--brand)]/20 shadow-sm">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                    <img src={testimonialImages[index]} alt={testimonial.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-[var(--text-primary)] text-sm">{testimonial.name}</h4>

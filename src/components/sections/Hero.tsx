@@ -3,8 +3,11 @@ import { ArrowDown, Mail } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { Link } from 'react-scroll'
 import { Button } from '../ui/Button'
+import { useTranslation } from 'react-i18next'
 
 export function Hero() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="hero"
@@ -40,7 +43,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="text-[var(--accent)] font-mono text-sm tracking-widest uppercase mb-4"
         >
-          Available for work
+          {t('hero.status')}
         </motion.p>
 
         {/* Name */}
@@ -51,11 +54,11 @@ export function Hero() {
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold
             text-[var(--text-primary)] leading-tight mb-6"
         >
-          Balqees Al-Khateeb
+          {t('hero.name')}
           <br />
           <span className="text-transparent bg-clip-text
             bg-gradient-to-r from-brand-500 to-accent-500">
-             Full-stack Technical Instructor
+             {t('hero.title')}
           </span>
         </motion.h1>
 
@@ -67,9 +70,7 @@ export function Hero() {
           className="text-[var(--text-secondary)] text-lg md:text-xl
             max-w-2xl mx-auto mb-10"
         >
-          I teach people
-how to build things
-with code.  I've helped hundreds of students go from zero to job-ready.
+          {t('hero.bio')}
         </motion.p>
 
         {/* CTAs */}
@@ -80,10 +81,10 @@ with code.  I've helped hundreds of students go from zero to job-ready.
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
           <Link to="topics" smooth offset={-80} duration={500}>
-            <Button variant="primary">View My Work</Button>
+            <Button variant="primary">{t('hero.cta')}</Button>
           </Link>
           <a href="/cv.pdf" download="Balqees_AlKhateeb_CV.pdf">
-            <Button variant="ghost">Download CV</Button>
+            <Button variant="ghost">{t('hero.cv')}</Button>
           </a>
         </motion.div>
 

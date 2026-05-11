@@ -7,85 +7,74 @@ import {
   GitBranch, Layers, Flame, Rocket, Bot 
 } from 'lucide-react'
 
+import { useTranslation } from 'react-i18next'
+
 const topics = [
   {
-    title: "HTML",
-    description: "Building semantic, accessible, and SEO-friendly web page structures.",
+    key: "HTML",
     icon: <FileCode2 className="w-6 h-6 text-orange-500" />
   },
   {
-    title: "UI/UX Fundamentals",
-    description: "Designing intuitive user experiences and visually appealing interfaces.",
+    key: "UI/UX Fundamentals",
     icon: <PenTool className="w-6 h-6 text-pink-500" />
   },
   {
-    title: "CSS & SASS",
-    description: "Styling web applications with modern CSS layouts and SASS preprocessors.",
+    key: "CSS & SASS",
     icon: <Palette className="w-6 h-6 text-blue-500" />
   },
   {
-    title: "Bootstrap",
-    description: "Rapidly prototyping responsive layouts using grid systems and components.",
+    key: "Bootstrap",
     icon: <Box className="w-6 h-6 text-purple-500" />
   },
   {
-    title: "React & Next.js",
-    description: "Creating dynamic, high-performance single-page and server-rendered applications.",
+    key: "React & Next.js",
     icon: <AppWindow className="w-6 h-6 text-cyan-400" />
   },
   {
-    title: "Node.js & Express",
-    description: "Building scalable backend architectures and robust server logic.",
+    key: "Node.js & Express",
     icon: <Server className="w-6 h-6 text-green-500" />
   },
   {
-    title: "MongoDB & PostgreSQL",
-    description: "Designing relational and NoSQL databases for complex data storage.",
+    key: "MongoDB & PostgreSQL",
     icon: <Database className="w-6 h-6 text-emerald-600" />
   },
   {
-    title: "REST APIs",
-    description: "Structuring and building standardized APIs for front-to-back communication.",
+    key: "REST APIs",
     icon: <Network className="w-6 h-6 text-[var(--accent)]" />
   },
   {
-    title: "Authentication & Authorization",
-    description: "Securing applications using JWT, OAuth, and role-based access controls.",
+    key: "Authentication & Authorization",
     icon: <ShieldCheck className="w-6 h-6 text-yellow-500" />
   },
   {
-    title: "Socket.IO",
-    description: "Implementing real-time bidirectional event-based communication.",
+    key: "Socket.IO",
     icon: <Radio className="w-6 h-6 text-red-500" />
   },
   {
-    title: "Git & Agile",
-    description: "Collaborating efficiently using version control and agile methodologies.",
+    key: "Git & Agile",
     icon: <GitBranch className="w-6 h-6 text-orange-600" />
   },
   {
-    title: "Redux & State Management",
-    description: "Managing complex frontend application states predictably.",
+    key: "Redux & State Management",
     icon: <Layers className="w-6 h-6 text-violet-500" />
   },
   {
-    title: "Firebase",
-    description: "Integrating rapid backend-as-a-service features like Auth and Firestore.",
+    key: "Firebase",
     icon: <Flame className="w-6 h-6 text-yellow-600" />
   },
   {
-    title: "Deployment & Vercel",
-    description: "Taking applications from local environments to live production servers.",
+    key: "Deployment & Vercel",
     icon: <Rocket className="w-6 h-6 text-zinc-400" />
   },
   {
-    title: "AI-assisted Development",
-    description: "Leveraging AI tools to accelerate coding workflows and problem-solving.",
+    key: "AI-assisted Development",
     icon: <Bot className="w-6 h-6 text-[var(--brand)]" />
   }
 ]
 
 export function Topics() {
+  const { t } = useTranslation()
+
   return (
     <section id="topics" className="py-20 md:py-32 bg-[var(--bg-secondary)]">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -97,10 +86,10 @@ export function Topics() {
           className="mb-12 md:mb-20 text-center"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Topics I <span className="text-[var(--brand)]">Teach</span>
+            {t('topics.title')}
           </h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            From the basics of web structure to advanced deployment, these are the core technologies and concepts I cover.
+            {t('topics.subtitle')}
           </p>
         </motion.div>
 
@@ -112,16 +101,16 @@ export function Topics() {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
           {topics.map((topic) => (
-            <motion.div key={topic.title} variants={fadeInUp} className="h-full">
+            <motion.div key={topic.key} variants={fadeInUp} className="h-full">
               <GlassCard hover className="h-full p-6 flex flex-col items-start bg-[var(--surface)]/60">
                 <div className="w-10 h-10 rounded-lg bg-[var(--bg-primary)] flex items-center justify-center shadow-sm border border-[var(--surface-border)] mb-4 shrink-0">
                   {topic.icon}
                 </div>
                 <h3 className="font-display text-lg font-bold text-[var(--text-primary)] mb-2">
-                  {topic.title}
+                  {topic.key}
                 </h3>
                 <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                  {topic.description}
+                  {t(`topics.items.${topic.key}`)}
                 </p>
               </GlassCard>
             </motion.div>

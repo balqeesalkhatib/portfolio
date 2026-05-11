@@ -4,6 +4,8 @@ import { fadeInUp, staggerContainer } from '../../lib/animations'
 import { GlassCard } from '../ui/GlassCard'
 import { Users, BookOpen, Calendar, Clock } from 'lucide-react'
 
+import { useTranslation } from 'react-i18next'
+
 interface StatProps {
   value: number
   label: string
@@ -61,11 +63,12 @@ function CounterCard({ value, label, suffix = "", icon }: StatProps) {
 }
 
 export function Stats() {
+  const { t } = useTranslation()
   const stats = [
-    { value: 100, label: "Students Taught", suffix: "+", icon: <Users size={28} /> },
-    { value: 15, label: "Tech Topics", suffix: "+", icon: <BookOpen size={28} /> },
-    { value: 3, label: "Years Experience", suffix: "+", icon: <Calendar size={28} /> },
-    { value: 1000, label: "Mentorship Hours", suffix: "+", icon: <Clock size={28} /> },
+    { value: 100, label: t('stats.students'), suffix: "+", icon: <Users size={28} /> },
+    { value: 15, label: t('stats.topics'), suffix: "+", icon: <BookOpen size={28} /> },
+    { value: 3, label: t('stats.experience'), suffix: "+", icon: <Calendar size={28} /> },
+    { value: 1000, label: t('stats.mentorship'), suffix: "+", icon: <Clock size={28} /> },
   ]
 
   return (

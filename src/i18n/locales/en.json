@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "about": "About",
+    "topics": "Topics",
+    "approach": "Approach",
+    "success": "Success",
+    "experience": "Experience",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "connect": "Let's connect",
+    "followMe": "Follow me for tech tips & insights"
+  },
+  "hero": {
+    "status": "Available for work",
+    "name": "Balqees Al-Khateeb",
+    "title": "Full-stack Technical Instructor",
+    "bio": "I teach people how to build things with code. I've helped hundreds of students go from zero to job-ready.",
+    "cta": "View My Work",
+    "cv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "p1": "I'm a Technical Instructor & Trainer specialized in the MERN stack, passionate about turning complex concepts into clear, hands-on learning experiences that actually stick. My path started in Electrical Engineering at JUST — which gave me a systems-thinking mindset I still use every day in the classroom. From there, I moved into QA Engineering, where I learned that understanding how things break is just as important as knowing how to build them.",
+    "p2": "That combination led me naturally into teaching. Today I deliver full-stack web development training, guiding students from their first HTML tag all the way to deploying production-ready apps.",
+    "quote": "I don't just teach syntax. I teach how to think like an engineer — how to break a problem down, read an error without panic, and build something you're genuinely proud of.",
+    "imageAlt": "Balqees mentoring students"
+  },
+  "projects": {
+    "title": "Selected Projects",
+    "subtitle": "A glimpse into some of my recent work and open-source contributions.",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "items": {
+      "project-1": {
+        "title": "Voice-to-Text App",
+        "description": "Real-time speech transcription powered by Whisper AI and n8n workflows."
+      },
+      "project-2": {
+        "title": "Modern Portfolio",
+        "description": "A personal developer portfolio built with React, Vite, and Tailwind CSS."
+      }
+    }
+  },
+  "stats": {
+    "students": "Students Taught",
+    "topics": "Tech Topics",
+    "experience": "Years Experience",
+    "mentorship": "Mentorship Hours"
+  },
+  "topics": {
+    "title": "Topics I Teach",
+    "subtitle": "From the basics of web structure to advanced deployment, these are the core technologies and concepts I cover.",
+    "items": {
+      "HTML": "Building semantic, accessible, and SEO-friendly web page structures.",
+      "UI/UX Fundamentals": "Designing intuitive user experiences and visually appealing interfaces.",
+      "CSS & SASS": "Styling web applications with modern CSS layouts and SASS preprocessors.",
+      "Bootstrap": "Rapidly prototyping responsive layouts using grid systems and components.",
+      "React & Next.js": "Creating dynamic, high-performance single-page and server-rendered applications.",
+      "Node.js & Express": "Building scalable backend architectures and robust server logic.",
+      "MongoDB & PostgreSQL": "Designing relational and NoSQL databases for complex data storage.",
+      "REST APIs": "Structuring and building standardized APIs for front-to-back communication.",
+      "Authentication & Authorization": "Securing applications using JWT, OAuth, and role-based access controls.",
+      "Socket.IO": "Implementing real-time bidirectional event-based communication.",
+      "Git & Agile": "Collaborating efficiently using version control and agile methodologies.",
+      "Redux & State Management": "Managing complex frontend application states predictably.",
+      "Firebase": "Integrating rapid backend-as-a-service features like Auth and Firestore.",
+      "Deployment & Vercel": "Taking applications from local environments to live production servers.",
+      "AI-assisted Development": "Leveraging AI tools to accelerate coding workflows and problem-solving."
+    }
+  },
+  "approach": {
+    "title": "What I bring to the classroom",
+    "subtitle": "How I ensure every student doesn't just learn — they grow, build, and succeed.",
+    "steps": {
+      "01": {
+        "title": "Mindset First",
+        "description": "Before any code — build the right way of thinking. Curiosity over memorization."
+      },
+      "02": {
+        "title": "Strong Basics",
+        "description": "No shortcuts. Solid fundamentals are what separates good devs from great ones."
+      },
+      "03": {
+        "title": "Apply It",
+        "description": "Every concept is immediately applied in a real project. Theory without practice is just trivia."
+      },
+      "04": {
+        "title": "Level Up",
+        "description": "Push further. Add features, fix bugs, deploy — keep growing beyond the basics."
+      }
+    },
+    "features": {
+      "build": {
+        "title": "Build Real Projects",
+        "description": "Students learn by doing. Every module ends with a project they built themselves — not a tutorial they followed.",
+        "tag": "Core principle"
+      },
+      "theory": {
+        "title": "Theory → Practice",
+        "description": "I bridge the gap between what's taught in class and what's actually expected in the job market.",
+        "tag": "Industry-aligned"
+      },
+      "debug": {
+        "title": "Debug Together",
+        "description": "My QA background means I teach students to read errors, write tests, and think critically about code quality.",
+        "tag": "QA mindset"
+      },
+      "career": {
+        "title": "Career-Ready Focus",
+        "description": "From code reviews to HR interview prep — I make sure students are ready for the job, not just the exam.",
+        "tag": "Job-market ready"
+      }
+    },
+    "banner": {
+      "title": "Teaching Gen-Z the way they actually learn",
+      "p": "I constantly evolve my teaching style to meet students where they are. That means mixing structured learning with live challenges, friendly competition, and hands-on activities that make the classroom feel less like a lecture and more like a lab.",
+      "activities": {
+        "competitions": "Coding Competitions",
+        "challenges": "Live Challenges",
+        "gamified": "Gamified Activities",
+        "pair": "Pair Programming",
+        "fix": "Fix & Connect"
+      }
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": {
+      "1": {
+        "role": "Technical Instructor",
+        "company": "Digital Opportunity Trust (dot.Jordan).",
+        "period": "Jan 2026 - Present",
+        "description": "Technical Instructor at Digital Opportunity Trust (DOT Jordan), mentoring students from foundational programming concepts to building full-stack MERN applications. Responsible for delivering hands-on technical training, guiding students through real-world projects, and conducting interactive educational activities focused on problem-solving, teamwork, and practical development skills."
+      },
+      "2": {
+        "role": "Operation Assistant",
+        "company": "Meraki Academy (Full time)",
+        "period": "Jun 2025 - Jan 2026",
+        "description": "Responsible for organizing and managing schedules, preparing all academic and logistical requirements for upcoming student cohorts, delivering instructional sessions and lectures, and conducting student interviews and assessments to support placement and readiness."
+      },
+      "3": {
+        "role": "Technical Instructor / Teacher Assistant",
+        "company": "Meraki Academy (Part time)",
+        "period": "Aug 2024 - Jun 2025",
+        "description": "Supported the delivery of engaging coding lessons and provided personalized assistance to students by troubleshooting code issues and clarifying programming concepts. Graded assignments with detailed, constructive feedback and led HR interview preparation sessions to help students succeed in the job market."
+      },
+      "4": {
+        "role": "Quality Assurance Engineer",
+        "company": "Jo-Students Academy",
+        "period": "Jul 2024 - Mar 2025",
+        "description": "Created and executed test cases and scenarios based on product requirements for manual and automated testing. Utilized Cypress for automated test scripts for web applications, conducted API testing using Postman and integrated API tests into CI/CD pipelines. Reported and tracked bugs using Trello and Excel, ensuring timely resolutions and improved product quality."
+      },
+      "5": {
+        "role": "Teacher Assistant",
+        "company": "Jordan University of Science and Technology JUST",
+        "period": "Oct 2020 - Jan 2021",
+        "description": "Teacher assistant at electronic lab at Jordan University of Science and Technology."
+      }
+    },
+    "toolsTitle": "TOOLS & TECHNOLOGIES"
+  },
+  "faq": {
+    "title": "Common Questions",
+    "items": [
+      {
+        "question": "What technologies do you teach?",
+        "answer": "I teach full-stack web development with a strong focus on the MERN stack, including React, Next.js, Node.js, Express.js, MongoDB, PostgreSQL, Firebase, and Socket.IO. I also cover Git, REST APIs, authentication, deployment, and modern frontend styling tools."
+      },
+      {
+        "question": "What is your teaching methodology?",
+        "answer": "I follow a project-based learning approach. We start with a brief theoretical foundation and immediately move into live coding and building real-world projects."
+      },
+      {
+        "question": "How long does it take to become job-ready?",
+        "answer": "It depends on your dedication. With my intensive roadmap, many students are ready for junior roles within 4 to 6 months of focused learning."
+      },
+      {
+        "question": "Is it okay to use AI tools while learning programming?",
+        "answer": "AI tools can be helpful, but I encourage students to first build a strong understanding of programming fundamentals and problem-solving skills without depending heavily on AI. Once the basics are clear, AI can become a useful assistant for improving productivity, exploring ideas, and accelerating development workflows."
+      },
+      {
+        "question": "What is the most important thing you teach students?",
+        "answer": "I always encourage students to practice consistently, build projects regularly, and never be afraid of errors. Making mistakes and debugging are essential parts of the learning process and one of the best ways to grow as a developer."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a question or want to collaborate? I'd love to hear from you.",
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me more about your inquiry...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "error": "Error Sending",
+      "successMessage": "Thank you! Your message has been sent successfully.",
+      "errorMessage": "Something went wrong. Please try again later.",
+      "required": "is required",
+      "invalidEmail": "Invalid email address"
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "I'm always open to discussing new projects, teaching opportunities, or just chatting about the latest in tech.",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationText": "Amman, Jordan",
+      "remote": "Available for remote work worldwide"
+    }
+  },
+  "testimonials": {
+    "title": "Student Success Stories",
+    "subtitle": "What my students say about their learning journey and career growth.",
+    "items": [
+      {
+        "name": "Ahmed Rayan",
+        "role": "Full-Stack Student",
+        "content": "Balqees has a unique way of breaking down complex React concepts. Her focus on 'why' before 'how' completely changed my approach to coding."
+      },
+      {
+        "name": "Sara Al-Otaibi",
+        "role": "MERN Stack Bootcamp Graduate",
+        "content": "The best part of learning with Balqees was the real-world projects. She doesn't just teach code; she teaches how to think like an engineer."
+      },
+      {
+        "name": "Omar Khaled",
+        "role": "Junior Web Developer",
+        "content": "Her QA background is a game-changer. I learned how to debug and test my applications properly, which helped me land my first job in record time."
+      }
+    ]
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

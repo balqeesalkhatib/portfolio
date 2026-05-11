@@ -5,7 +5,11 @@ import { projects } from '../../data/projects'
 import { ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
+import { useTranslation } from 'react-i18next'
+
 export function Projects() {
+  const { t } = useTranslation()
+
   return (
     <section id="projects" className="py-20 md:py-32 bg-[var(--bg-secondary)]">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -17,11 +21,10 @@ export function Projects() {
           className="mb-12 md:mb-20 text-center"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-[var(--brand)]">Projects</span>
+            {t('projects.title')}
           </h2>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
-            A selection of my recent work, highlighting my focus on performance,
-            clean code, and great user experiences.
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -38,15 +41,17 @@ export function Projects() {
                 <div className="relative h-48 md:h-64 overflow-hidden bg-gray-100 dark:bg-gray-800">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={t(`projects.items.${project.id}.title`)}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <h3 className="font-display text-2xl font-bold mb-2">{project.title}</h3>
+                  <h3 className="font-display text-2xl font-bold mb-2">
+                    {t(`projects.items.${project.id}.title`)}
+                  </h3>
                   <p className="text-[var(--text-secondary)] mb-6 flex-grow">
-                    {project.description}
+                    {t(`projects.items.${project.id}.description`)}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-8">
@@ -68,7 +73,7 @@ export function Projects() {
                         rel="noreferrer"
                         className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--brand)] transition-colors"
                       >
-                        <ExternalLink size={16} /> Live Demo
+                        <ExternalLink size={16} /> {t('projects.viewProject')}
                       </a>
                     )}
                     {project.githubUrl && (
@@ -78,7 +83,7 @@ export function Projects() {
                         rel="noreferrer"
                         className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] hover:text-[var(--brand)] transition-colors"
                       >
-                        <FaGithub size={16} /> Source Code
+                        <FaGithub size={16} /> {t('projects.viewCode')}
                       </a>
                     )}
                   </div>

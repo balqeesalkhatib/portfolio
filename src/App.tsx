@@ -12,8 +12,16 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { ArrowUp } from 'lucide-react'
 import { Link } from 'react-scroll'
+import { useTranslation } from 'react-i18next'
 
 function App() {
+  const { i18n } = useTranslation()
+
+  useEffect(() => {
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
+    document.documentElement.lang = i18n.language
+  }, [i18n.language])
+
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

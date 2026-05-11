@@ -2,21 +2,24 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from '../ui/ThemeToggle'
+import { LanguageToggle } from '../ui/LanguageToggle'
 import { Menu, X } from 'lucide-react'
-
-const navLinks = [
-  { label: 'About',      to: 'about' },
-  { label: 'Topics',     to: 'topics' },
-  { label: 'Approach',   to: 'approach' },
-  { label: 'Success',    to: 'testimonials' },
-  { label: 'Experience', to: 'experience' },
-  { label: 'FAQ',        to: 'faq' },
-  { label: 'Contact',    to: 'contact' },
-]
+import { useTranslation } from 'react-i18next'
 
 export function Navbar() {
+  const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  const navLinks = [
+    { label: t('nav.about'),      to: 'about' },
+    { label: t('nav.topics'),     to: 'topics' },
+    { label: t('nav.approach'),   to: 'approach' },
+    { label: t('nav.success'),    to: 'testimonials' },
+    { label: t('nav.experience'), to: 'experience' },
+    { label: t('nav.faq'),        to: 'faq' },
+    { label: t('nav.contact'),    to: 'contact' },
+  ]
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -81,6 +84,7 @@ export function Navbar() {
           </ul>
 
           <div className="flex items-center gap-4">
+            <LanguageToggle />
             <ThemeToggle />
             
             {/* Mobile Toggle */}
@@ -128,10 +132,9 @@ export function Navbar() {
             
             {/* Decorative element in mobile menu */}
             <div className="mt-12 pt-12 border-t border-[var(--surface-border)]">
-              <p className="text-[var(--text-muted)] text-sm mb-4">Let's connect</p>
+              <p className="text-[var(--text-muted)] text-sm mb-4">{t('nav.connect')}</p>
               <div className="flex gap-6 text-[var(--text-secondary)]">
-                {/* Simplified social links for mobile menu bottom */}
-                <span className="text-xs">Follow me for tech tips & insights</span>
+                <span className="text-xs">{t('nav.followMe')}</span>
               </div>
             </div>
           </motion.div>
