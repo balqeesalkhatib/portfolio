@@ -110,11 +110,12 @@ function TopicCard({
         perspective: 1000,
         zIndex: hovered ? 40 : 1,
       }}
-      animate={{ scale: hovered ? 1.15 : 1 }}
+      animate={{ scale: hovered ? 1.12 : 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="cursor-pointer select-none relative"
+      onClick={() => setHovered(!hovered)}
+      className="cursor-pointer select-none relative touch-manipulation"
     >
       {/* Card face — height animates with layout */}
       <motion.div
