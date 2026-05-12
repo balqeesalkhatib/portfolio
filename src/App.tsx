@@ -14,14 +14,16 @@ import { ArrowUp } from 'lucide-react'
 import { Link } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
 import { Analytics } from '@vercel/analytics/react'
+import { FloatingCV } from './components/ui/FloatingCV'
 
 function App() {
   const { i18n } = useTranslation()
+  const isRTL = i18n.language === 'ar'
 
   useEffect(() => {
-    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
     document.documentElement.lang = i18n.language
-  }, [i18n.language])
+  }, [i18n.language, isRTL])
 
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
@@ -56,14 +58,14 @@ function App() {
         <Stats />
         <Topics />
         <Approach />
-        {/* <Testimonials /> 
-        // i should add it and choose 3-6 students*/}
         <Experience />
         <FAQ />
         <Contact />
       </main>
 
       <Footer />
+
+      <FloatingCV />
 
       {/* Back to Top Button */}
       <AnimatePresence>
@@ -73,7 +75,12 @@ function App() {
               initial={{ opacity: 0, scale: 0.5, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.5, y: 20 }}
-              className="fixed bottom-8 right-8 z-[60] w-12 h-12 rounded-full bg-[var(--brand)] text-white shadow-lg flex items-center justify-center hover:bg-[var(--brand)]/90 transition-colors group"
+              className={`
+                fixed bottom-8 ${isRTL ? 'left-8' : 'right-8'} z-[60] 
+                w-12 h-12 rounded-full bg-[var(--brand)] text-white 
+                shadow-lg flex items-center justify-center 
+                hover:bg-[var(--brand)]/90 transition-colors group
+              `}
               aria-label="Back to Top"
             >
               <ArrowUp size={24} className="group-hover:-translate-y-1 transition-transform" />
