@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react'
 import { ArrowUp } from 'lucide-react'
 import { Link } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const { i18n } = useTranslation()
@@ -86,6 +87,9 @@ function App() {
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--brand)] blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[var(--accent)] blur-[120px]" />
       </div>
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   )
 }
