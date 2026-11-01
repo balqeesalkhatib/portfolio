@@ -16,8 +16,9 @@ export function Navbar() {
     { label: t('nav.topics'),     to: 'topics' },
     { label: t('nav.approach'),   to: 'approach' },
     { label: t('nav.success'),    to: 'testimonials' },
+    { label: 'Training', to: 'training' },
     { label: t('nav.experience'), to: 'experience' },
-    { label: t('nav.faq'),        to: 'faq' },
+    { label: t('nav.faq'),        to: 'faq' },    
     { label: t('nav.contact'),    to: 'contact' },
   ]
 

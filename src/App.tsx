@@ -7,6 +7,7 @@ import { Approach } from './components/sections/Approach'
 import { Experience } from './components/sections/Experience'
 import { FAQ } from './components/sections/FAQ'
 import { Contact } from './components/sections/Contact'
+import { Training } from './components/sections/Training'
 import { Footer } from './components/layout/Footer'
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
@@ -58,10 +59,11 @@ function App() {
         <Stats />
         <Topics />
         <Approach />
+        <Training />
         <Experience />
         <FAQ />
         <Contact />
-      </main>
+            </main>
 
       <Footer />
 

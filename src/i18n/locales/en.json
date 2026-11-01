@@ -171,6 +171,13 @@
     },
     "toolsTitle": "TOOLS & TECHNOLOGIES"
   },
+  "trainingInfo": {
+    "program": "Program",
+    "deliveredBy": "Delivered By",
+    "hostedAt": "Hosted At",
+    "institution": "Institution",
+    "myRole": "My Role"
+  },
   "faq": {
     "title": "Common Questions",
     "items": [
